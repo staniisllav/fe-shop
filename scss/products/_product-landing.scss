@@ -64,13 +64,14 @@
 
     &-img {
         width: 100%;
-
         max-width: 300px;
         background-color: white;
         border-radius: 20px;
         z-index: 15;
         scale: 1;
         transition: all 0.3s ease-in-out;
+
+
 
         &:first-child,
         &:last-child {
