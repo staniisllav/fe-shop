@@ -124,15 +124,15 @@ body {
     }
 
     @include breakpoint(large) {
-        max-width: 960px;
+        max-width: 960px !important;
     }
 
     @include breakpoint(x-large) {
-        max-width: 1140px;
+        max-width: 1140px !important;
     }
 
     @include breakpoint(xx-large) {
-        max-width: 1320px;
+        max-width: 1320px !important;
     }
 }
 
@@ -154,7 +154,7 @@ body {
     @include abs-position(fixed, 0, 0, auto, auto);
     @include fade(hide);
     @include box(100%);
-    z-index: 2;
+    z-index: 50;
     background-color: $modal;
 
     &.active {
@@ -180,8 +180,17 @@ body {
         transform: translateX(-350%);
         background-color: $background;
 
+        margin: unset;
+
         @include breakpoint(medium) {
             @include box(60%, 100%);
+            margin: unset;
+        }
+
+        @include breakpoint(large) {
+            //  content
+            width: 100%;
+            margin: 0 auto;
         }
 
         &.active {

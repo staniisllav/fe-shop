@@ -12,7 +12,7 @@
         box-shadow: $shadow;
         transform: translateY(-100%) translateX(50%);
         transition: $transition;
-        z-index: 9;
+        z-index: 69;
         border-collapse: collapse;
 
         @include breakpoint(small) {

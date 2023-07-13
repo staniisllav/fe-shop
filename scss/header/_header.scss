@@ -10,8 +10,35 @@ header {
     gap: 15px;
     transition: $transition;
 
+
     @include breakpoint(medium) {
         @include flexer(row, space-between, center, 10px);
+    }
+
+    &__top {
+        background-color: forestgreen;
+        background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+        color: $background;
+
+        &--flex {
+            @include flexer(row, space-between, center, 20px);
+            width: 100%;
+            @include responsive-spacing(padding, 0.01);
+
+            @include breakpoint(medium) {
+                padding: 0;
+                @include responsive-spacing(padding-top, 0.001);
+                @include responsive-spacing(padding-bottom, 0.001);
+            }
+        }
+
+        button {
+            @include responsive-spacing(padding, 0.0001);
+            border-radius: 10px;
+            background-color: $background;
+            color: $text;
+            cursor: pointer;
+        }
     }
 }
 
@@ -94,10 +121,11 @@ header {
             transform: unset;
             position: relative;
             background-color: transparent;
-            width: 960px;
+            padding: 0;
+            margin: 0 auto;
             @include responsive-spacing(padding-top, 0.001);
             @include responsive-spacing(padding-bottom, 0.001);
-            margin: 0 auto;
+
         }
     }
 

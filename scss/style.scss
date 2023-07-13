@@ -1,20 +1,20 @@
 //------------------------------Variables,Functions,Mixins
 @import 'variables/variables';
-@import 'functions/functions';
 @import 'mixins/mixins';
 //------------------------------General Options and Fonts
 @import 'fonts/fonts';
 @import 'general/general';
 //------------------------------Header and Footer
 @import 'header/header';
-@import 'footer/footer';
-@import 'tab/tab';
-//------------------------------Products list page
 @import 'header/cart';
+@import 'footer/footer';
+//------------------------------Products list page
+@import "home/home";
 @import 'products/products';
-//------------------------------Product landing page
 @import 'products/product-landing';
+//------------------------------Product landing page
 @import 'payment/details';
 @import 'payment/checking';
 //------------------------------Cookies
 @import"general/cookies";
+@import 'tab/tab';

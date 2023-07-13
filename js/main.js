@@ -19,7 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.getElementById('home__prev').onclick = function(){
+  let lists = document.querySelectorAll('.home__item');
+  document.getElementById('home__slide').prepend(lists[lists.length - 1]);
+}
 
+document.getElementById('home__next').onclick = function(){
+  let lists = document.querySelectorAll('.home__item');
+  document.getElementById('home__slide').appendChild(lists[0]);
+}
 
 const searchBox = document.querySelector(".search-box");
 const searchBtn = document.querySelector(".search");
