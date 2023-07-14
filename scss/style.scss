@@ -8,8 +8,10 @@
 @import 'header/header';
 @import 'header/cart';
 @import 'footer/footer';
-//------------------------------Products list page
+//------------------------------Main Components
 @import "home/home";
+@import "home/support";
+//------------------------------Products list page
 @import 'products/products';
 @import 'products/product-landing';
 //------------------------------Product landing page

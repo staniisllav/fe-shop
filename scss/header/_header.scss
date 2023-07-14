@@ -4,19 +4,36 @@ header {
 
 .header {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    @include flexer(column, space-between, center, 15px);
     gap: 15px;
     transition: $transition;
+    padding: 0;
+    width: 100%;
+    padding-bottom: 15px;
 
-
-    @include breakpoint(medium) {
+    @include breakpoint(extra-small) {
         @include flexer(row, space-between, center, 10px);
+        padding: clamp(10px, 1vw, 50px);
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    @include breakpoint(large) {
+        gap: 50px;
+        padding: 0;
+    }
+
+    &__buttons {
+        @include flexer(row, space-between, center, 15px);
+        // width: 100%;
+
+        @include breakpoint(small) {
+            @include flexer(row, center, center, 10px);
+            width: auto;
+        }
     }
 
     &__top {
-        background-color: forestgreen;
         background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
         color: $background;
 
@@ -44,15 +61,9 @@ header {
 
 .logo {
     @include font(900);
+    @include box(5rem, 100%);
     font-family: 'Dancing-Script', cursive;
     transition: $transition;
-    grid-area: 1;
-    grid-column: 1/5;
-
-    @include breakpoint(medium) {
-        flex: 1;
-        text-align: left;
-    }
 }
 
 .search {
@@ -105,38 +116,36 @@ header {
 .menu {
     @include flexer($align-items: flex-start);
 
+
     @include breakpoint(large) {
         @include fade(show);
         position: relative;
         width: 100%;
-        background-color: $text;
+        background-color: $background;
     }
 
     &__list {
-        @include flexer(column, center, center, 40px);
+        @include flexer(column, center, center, 30px);
 
         @include breakpoint(large) {
             @include fade(show);
-            @include flexer(row, space-between, center);
+            @include flexer(row, center, center, 30px);
             transform: unset;
             position: relative;
             background-color: transparent;
             padding: 0;
             margin: 0 auto;
-            @include responsive-spacing(padding-top, 0.001);
-            @include responsive-spacing(padding-bottom, 0.001);
-
         }
     }
 
     &__item {
-        @include font(500);
-        font-size: 35px;
+        color: darken(#1a691a, 10%);
+        font-size: 25px;
+        font-weight: 500;
         cursor: pointer;
 
         @include breakpoint(large) {
-            @include font(500, $secondary);
-            font-size: 20px;
+            font-size: unset;
             transform: unset;
             padding: 0;
         }

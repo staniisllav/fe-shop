@@ -13,9 +13,35 @@
 
     }
 
+    &__video {
+        @include box(100%, 400px);
+        border-radius: 10px;
+        position: relative;
+
+        video {
+            @include box(100%, 400px);
+            object-fit: cover;
+            filter: brightness(0.3);
+        }
+
+        &--text {
+            @include abs-position (absolute, 50%, unset, unset, 50%);
+            transform: translate(-50%, -50%);
+            width: 100%;
+            @include flexer(column, center, center, 35px);
+
+            h1,
+            span {
+                color: #f2f2f2;
+                text-align: center;
+            }
+        }
+
+    }
+
     &__content {
         @include abs-position (absolute, 50%, unset, unset, 50%);
-        @include responsive-spacing(padding, 0.02);
+        // @include responsive-spacing(padding, 0.02);
         transform: translate(-50%, -50%);
         transition: $transition;
         display: none;

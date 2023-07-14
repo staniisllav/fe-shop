@@ -10,6 +10,27 @@
 }
 
 
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #f2f2f2 transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: darken(#f2f2f2, 10%);
+    border-radius: 15px;
+    border: 2px solid transparent;
+}
+
+
 h1,
 h2,
 p,
@@ -156,6 +177,7 @@ body {
     @include box(100%);
     z-index: 50;
     background-color: $modal;
+    backdrop-filter: blur(3px);
 
     &.active {
         @include fade(show);
@@ -179,7 +201,7 @@ body {
         @include fade(hide);
         transform: translateX(-350%);
         background-color: $background;
-
+        overflow-y: auto;
         margin: unset;
 
         @include breakpoint(medium) {
@@ -188,7 +210,6 @@ body {
         }
 
         @include breakpoint(large) {
-            //  content
             width: 100%;
             margin: 0 auto;
         }
