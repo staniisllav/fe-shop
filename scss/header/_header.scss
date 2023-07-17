@@ -66,56 +66,62 @@ header {
     transition: $transition;
 }
 
-.search {
+.search__open {
     @include btn;
-    @include abs-position(absolute, 50%, -1.5px, auto, auto);
-    transform: translateY(-50%);
-    z-index: 1;
+}
 
-    &-box {
-        @include box(45px);
-        position: relative;
-        border-radius: $border-radius-big;
-        background-color: transparent;
+.search {
+    @include abs-position (fixed, 0, unset, unset, 0);
+    @include flexer(row, center, flex-start);
+    @include fade(hide);
+    @include box(100%);
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    backdrop-filter: blur(2px);
+
+    &.active {
+        @include fade(show);
+    }
+
+    &__content {
+        @include flexer(row, center, center, 20px);
+        @include responsive-spacing(padding, 0.01);
+        @include responsive-spacing(padding-left, 0.03);
+        @include responsive-spacing(padding-right, 0.03);
+        @include box(100%, auto);
         transition: $transition;
+        background-color: $background;
 
-        &.active {
-            width: 100%;
-            grid-column: 1/max-content;
-
-            @include breakpoint(large) {
-                width: 500px;
-            }
+        button {
+            @include btn;
         }
 
-        input {
-            @include box(100%, 45px);
-            @include fade(hide);
-            @include font(100, $secondary);
-            border: none;
-            border-radius: $border-radius-big;
-            background: transparent;
-            outline: none;
-            opacity: 0;
-            background-color: $text;
-            color: $background;
-
-            &.active {
-                @include fade(show);
-                padding: 0 60px 0 20px;
-            }
-
-            &::placeholder {
-                color: $background;
-                font-weight: 100;
-            }
+        @include breakpoint(small) {
+            @include box(90%, auto);
+            border-radius: 0 0 15px 15px;
         }
+
+        @include breakpoint(medium) {
+            @include box(80%, auto);
+            border-radius: 0 0 15px 15px;
+        }
+    }
+
+    &__input {
+        @include box(100%, 50px);
+        flex: 1;
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid darken(#1a691a, 10%);
+        outline: none;
     }
 }
 
+
+
+
 .menu {
     @include flexer($align-items: flex-start);
-
 
     @include breakpoint(large) {
         @include fade(show);

@@ -46,14 +46,11 @@
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </button>
-                <div class="search-box">
-                    <input type="text" placeholder="Type to search..">
-                    <div class="search">
-                        <svg>
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                    </div>
+                <div class="search__open" id="searchOpen" data-tooltip="press ' / ' to open">
+                    <svg>
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
                 </div>
                 <div class="cart">
                     <button class="cart__btn" id="cartBtn">
@@ -111,8 +108,24 @@
                     </svg>
                 </a>
             </div>
+            <div class="search" id="search">
+                <form class="search__content">
+                    <input class="search__input" type="text" name="search">
+                    <button type="submit">
+                        <svg>
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <button type="button" id="searchClose" data-tooltip-down="press ESC to close">
+                        <svg>
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </div>
-
     </header>
     <main>
         <div class="home__container" id="homeContainer">
@@ -229,9 +242,104 @@
                 </button>
             </div>
         </div>
-        <div class="container">
-            <h2>Top products this month</h2>
+        <div class="container cards">
+            <h2 class="section__title">Top products this month</h2>
+            <div class="card-wrapper">
+                <button id="cardLeft" class="card-button">
+                    <svg>
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <ul class="card-carousel">
+                    <li class="card">
+                        <img src="img/bottle1.png" alt="img" draggable="false">
+                        <h2>EcoPure</h2>
+                        <p>Stay hydrated with the EcoPure water bottle by 24bottles.</p>
+                        <span>Eco-friendly, BPA-free, Reusable</span>
+                        <p>$19.99</p>
+                    </li>
 
+                    <li class="card">
+                        <img src="img/bottle2.png" alt="img" draggable="false">
+                        <h2>Urban Oasis</h2>
+                        <p>The Urban Oasis water bottle is perfect for on-the-go hydration.</p>
+                        <span>Travel, Leak-proof, Stainless steel</span>
+                        <p class="price"><span>$24.99</span>$19.99</p>
+                        <div class="card__fire">
+                            <img src="img/fire.svg" alt="fire">
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/bottle3.png" alt="img" draggable="false">
+                        <h2>AquaLite</h2>
+                        <p>The AquaLite water bottle offers lightweight and durable design.</p>
+                        <span>Sports, Gym, Active lifestyle</span>
+                        <p>$14.99</p>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/background-bottle1.jpeg" alt="img" draggable="false">
+                        <h2>Pure Flow</h2>
+                        <p>Embrace pure hydration with the sleek Pure Flow water bottle.</p>
+                        <span>Minimalist, BPA-free, Sustainable</span>
+                        <p>$22.99</p>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/background-bottle2.jpeg" alt="img" draggable="false">
+                        <h2>Oasis Pro</h2>
+                        <p>The Oasis Pro water bottle keeps your beverages at the perfect temperature.</p>
+                        <span>Insulated, Outdoor, Hot and cold</span>
+                        <p>$34.99</p>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/background-bottle3.jpeg" alt="img" draggable="false">
+                        <h2>Terra Essence</h2>
+                        <p>Experience nature with the Terra Essence water bottle.</p>
+                        <span>Nature-inspired, Sustainable</span>
+                        <p>$18.99</p>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/background-bottle4.jpeg" alt="img" draggable="false">
+                        <h2>AquaWave</h2>
+                        <p>Ride the waves of hydration with the AquaWave water bottle.</p>
+                        <span>Surfing, Beach, Adventure</span>
+                        <p>$16.99</p>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/background-bottle5.jpeg" alt="img" draggable="false">
+                        <h2>Urban Sip</h2>
+                        <p>Sip in style with the Urban Sip water bottle.</p>
+                        <span>Fashion, Trendy, Urban</span>
+                        <p>$29.99</p>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/background-bottle6.jpeg" alt="img" draggable="false">
+                        <h2>Fresh Spring</h2>
+                        <p>Quench your thirst with the Fresh Spring water bottle.</p>
+                        <span>Refreshing, Nature, Hiking</span>
+                        <p>$12.99</p>
+                    </li>
+
+                    <li class="card">
+                        <img src="img/bottle3.png" alt="img" draggable="false">
+                        <h2>Summit Elite</h2>
+                        <p>Reach new heights with the Summit Elite water bottle.</p>
+                        <span>Mountaineering, Climbing, Outdoor</span>
+                        <p>$27.99</p>
+                    </li>
+                </ul>
+                <button id="cardRight" class="card-button">
+                    <svg>
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
         </div>
         <div class="home__video">
             <video autoplay loop muted playsinline defaultmuted preload="auto">
