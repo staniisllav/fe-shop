@@ -182,6 +182,12 @@ header {
             width: min-content;
         }
 
+        &.active {
+            button {
+                transform: rotateX(180deg);
+            }
+        }
+
         a {
             color: darken(#1a691a, 10%);
             font-size: 25px;

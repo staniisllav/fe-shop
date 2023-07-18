@@ -25,22 +25,31 @@ window.addEventListener("keydown", function(event) {
 
 // Function on Header Items
 const menuItems = document.querySelectorAll(".menu__item");
-let openItem = null;
 
 menuItems.forEach(item => {
   item.addEventListener("click", function() {
     const nextElementSibling = item.nextElementSibling;
     const isActive = nextElementSibling.classList.contains("active");
+    const isActiveBTN = item.classList.contains("active");
 
-    if (isActive) {
-      nextElementSibling.classList.remove("active");
-      openItem = null;
-    } else {
-      if (openItem) {
-        openItem.nextElementSibling.classList.remove("active");
-      }
+
+    menuItems.forEach(otherItem => {
+      otherItem.classList.remove("active");
+    });
+
+    // Add or remove "active" class based on current state
+    if (!isActiveBTN) {
+      item.classList.add("active");
+    } 
+
+    // Remove "active" class from all items
+    menuItems.forEach(otherItem => {
+      otherItem.nextElementSibling.classList.remove("active");
+    });
+
+    // Add or remove "active" class based on current state
+    if (!isActive) {
       nextElementSibling.classList.add("active");
-      openItem = item;
     }
   });
 
@@ -49,10 +58,11 @@ menuItems.forEach(item => {
       menuItems.forEach(item => {
         item.nextElementSibling.classList.remove("active");
       });
-      openItem = null;
     }
   });
 });
+
+
 
 
 
