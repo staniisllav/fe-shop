@@ -202,6 +202,7 @@ header {
         button {
             @include flexer(row, center, center, 15px);
             border: none;
+            transition: $transition;
             background-color: transparent;
 
             svg {
@@ -213,7 +214,6 @@ header {
             font-size: unset;
             transform: unset;
             padding: 0;
-
         }
     }
 
