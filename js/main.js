@@ -23,6 +23,40 @@ window.addEventListener("keydown", function(event) {
 });
 
 
+// Function on Header Items
+const menuItems = document.querySelectorAll(".menu__item");
+let openItem = null;
+
+menuItems.forEach(item => {
+  item.addEventListener("click", function() {
+    const nextElementSibling = item.nextElementSibling;
+    const isActive = nextElementSibling.classList.contains("active");
+
+    if (isActive) {
+      nextElementSibling.classList.remove("active");
+      openItem = null;
+    } else {
+      if (openItem) {
+        openItem.nextElementSibling.classList.remove("active");
+      }
+      nextElementSibling.classList.add("active");
+      openItem = item;
+    }
+  });
+
+  window.addEventListener("resize", function() {
+    if (window.innerWidth > 768) {
+      menuItems.forEach(item => {
+        item.nextElementSibling.classList.remove("active");
+      });
+      openItem = null;
+    }
+  });
+});
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
   var cookieConsentElement = document.getElementById('cookieConsent');
   var cookieConsentButton = document.getElementById('cookieConsentButton');
