@@ -194,11 +194,8 @@ document.getElementById('home__next').onclick = function(){
 
 
 
-const logo = document.querySelector(".logo");
 const menu = document.querySelector("#menuOpen");
 const cartBtn = document.querySelector(".cart");
-const heart = document.querySelector(".heart");
-const headerRight = document.querySelector(".header__right");
 
 
 
@@ -235,6 +232,7 @@ const headerRight = document.querySelector(".header__right");
   initializeMenu("menuOpen", "menuClose", "menu", "menuContent");
   // initializeMenu('filterOpen', 'filterClose', 'filter', "filterContent");
 
+
 function toggleDropdown(buttonId, dropdownId) {
   var button = document.querySelector(buttonId);
   var dropdown = document.querySelector(dropdownId);
@@ -251,7 +249,6 @@ function toggleDropdown(buttonId, dropdownId) {
     }
   });
 }
-
 toggleDropdown(".cart__btn", ".cart__list");
 
 
@@ -294,42 +291,6 @@ if(nextButton){
     thumbnails[nextIndex].click();
   });
 }
-
-// let counter = 1;
-// const counterInput = document.getElementById("count");
-// const incrementBtn = document.getElementById("countIncrease");
-// const decrementBtn = document.getElementById("countDecrease");
-
-// function updateCounterValue() {
-//   counterInput.value = counter;
-// }
-
-// function incrementCounter() {
-//   counter++;
-//   updateCounterValue();
-// }
-
-// function decrementCounter() {
-//   if (counter > 1) {
-//     counter--;
-//     updateCounterValue();
-//   }
-// }
-
-// function validateAndSetCounterValue() {
-//   const inputValue = parseInt(counterInput.value);
-//   if (!isNaN(inputValue)) {
-//     counter = Math.max(inputValue, 1);
-//   } else {
-//     counter = 0;
-//   }
-//   updateCounterValue();
-// }
-
-// incrementBtn.addEventListener("click", incrementCounter);
-// decrementBtn.addEventListener("click", decrementCounter);
-// counterInput.addEventListener("input", validateAndSetCounterValue);
-
 
 
 
